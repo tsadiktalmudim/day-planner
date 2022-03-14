@@ -26,8 +26,8 @@ $(document).ready(function() {
 
         //loop time-blocks
         $(".time-block").each(function() {
+            // parsing everything in the parent container with ".time-block" for an integer, selecting id's and splitting "hour" away from the numbers, selecting the second part of the selected id which is the number, (ie #hour12)
             var pastTime = parseInt($(this).attr("id").split("hour")[1]);
-            console.log(currentTime, pastTime);
 
             // if past current hour, grayed-out background
             if (pastTime < currentTime) {
