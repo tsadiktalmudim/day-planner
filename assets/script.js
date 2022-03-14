@@ -1,41 +1,3 @@
-// var hours = [{
-//         hours: "9AM"
-//     },
-//     { hours: "10AM" },
-//     { hours: "11AM" },
-//     { hours: "12PM" },
-//     { hours: "1PM" },
-//     { hours: "2PM" },
-//     { hours: "3PM" },
-//     { hours: "4PM" },
-//     { hours: "5PM" }
-// ];
-
-
-
-// var planner = function() {
-//     //select parent container
-//     var hourParentEl = document.querySelector(".container");
-//     // create HTML for time blocks
-//     var textContainerEl = document.createElement("textarea");
-//     textContainerEl.classList = ".col-10";
-//     var hourBlockEl = document.createElement("div");
-//     hourBlockEl.classList = ".col-1 border-right border-top bg-light";
-//     var saveButtonEl = document.createElement("button");
-//     saveButtonEl.classList = ".btn savebtn col-1 bg-info rounded-right";
-//     saveButtonEl.innerHTML = '<i class="fa-solid fa-floppy-disk"></i>';
-
-//     // append to parent
-//     hourParentEl.appendChild(hourBlockEl);
-//     hourParentEl.appendChild(textContainerEl);
-//     hourParentEl.appendChild(saveButtonEl);
-// }
-
-// planner();
-
-// var dayDisplayEl = document.querySelector("#currentDay");
-// dayDisplayEl.textContent = moment(day);
-
 $(document).ready(function() {
     // display current day
     $("#currentDay").text(moment().format("MMM DD, YYYY LT"));
@@ -65,7 +27,7 @@ $(document).ready(function() {
         //loop time-blocks
         $(".time-block").each(function() {
             var pastTime = parseInt($(this).attr("id").split("hour")[1]);
-            console.log(pastTime);
+            console.log(currentTime, pastTime);
 
             // if past current hour, grayed-out background
             if (pastTime < currentTime) {
